@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Stats Dashboard</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>SlitherPlus.io</h1>
+
+    <div class="control-panel">
+      <button type="button" id="refresh-btn" class="btn primary">Refresh now</button>
+
+      <div class="dropdown" data-dropdown="region">
+        <button type="button" id="region-btn" class="btn secondary">Select Region</button>
+        <ul id="region-menu" class="menu" role="menu"></ul>
+      </div>
+
+      <div class="dropdown" data-dropdown="sort">
+        <button type="button" id="sort-btn" class="btn secondary">Sort</button>
+        <ul id="sort-menu" class="menu" role="menu"></ul>
+      </div>
+
+      <div class="search-group">
+        <input type="search" id="search-input" placeholder="Quick search players..." aria-label="Quick search players" />
+        <button type="button" id="search-btn" class="btn secondary">Quick Search</button>
+      </div>
+    </div>
+
+    <p class="status-bar">
+      <span id="status-summary">Showing 0 servers.</span>
+      <span id="status-viewers">Online viewers: 0</span>
+      <span id="status-refresh">Refreshing in: --</span>
+    </p>
+  </header>
+
+  <main>
+    <div id="stats-container" class="stats-container">
+      <p class="loading">Fetching stats...</p>
+    </div>
+  </main>
+
+  <div id="minimap-modal" class="minimap-modal hidden" role="dialog" aria-modal="true" aria-labelledby="minimap-modal-title">
+    <div class="modal-content">
+      <button id="minimap-modal-close" class="modal-close" aria-label="Close minimap">&times;</button>
+      <h2 id="minimap-modal-title"></h2>
+      <img id="minimap-modal-image" alt="Minimap preview" />
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
